@@ -16,6 +16,12 @@
 <body>
     
     <div id="root">
+        <header>
+            <label for="">
+                <input v-model="titolo" type="text">
+                <button @click="cerca">cerca</button>
+            </label>
+        </header>
         <div class="wrapper">
             <div class="lista">
 
@@ -27,7 +33,7 @@
                         </ul>
     
                         <span>
-                            <h2>title</h2>
+                            <h2>{{titolo}}</h2>
                             <h4>original title</h4>
                             <h4>lingua</h4>
                             <h4>voto</h4>
