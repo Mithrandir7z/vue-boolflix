@@ -47,7 +47,7 @@ var app = new Vue({
 
 
                     } else if (this.language != element.original_language) {
-                        element.flag = 1;
+                        element.flag = 0;
                     }
 
                 });
