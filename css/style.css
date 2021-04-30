@@ -11,9 +11,11 @@ img {
 #root {
     width: 100%;
     height: 100vh;
-    background-color: rgb(65, 65, 65);
+    background-color: #141414;
     padding: 50px;
     text-align: center;
+    overflow: auto;
+    color: white;
 }
 
 .wrapper {
@@ -29,7 +31,7 @@ img {
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    background-color: blanchedalmond;
+    background-color: rgb(65, 65, 65);
 }
 
 .single-list {
@@ -39,9 +41,8 @@ img {
     justify-content: center;
     margin: 15px;
 
-    /*TEST*/
-    height: 300px;
-    background-color: cornflowerblue;
+    /*test*/
+    background-color: black;
 }
 
 .wrapper-single-list {

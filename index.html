@@ -16,27 +16,34 @@
 <body>
     
     <div id="root">
+
         <header>
+            <!--INPUT E BUTTON-->
             <label for="">
                 <input v-model="titolo" type="text">
-                <button @click="cerca">cerca</button>
+                <button @click="cerca(titolo)">cerca</button>
             </label>
         </header>
+
+
+        <!-- the lord of the rings -->
         <div class="wrapper">
             <div class="lista">
 
                 <!--Inizio Single List-->
-                <div class="single-list">
-                    <div class="wrapper-single-list">
+                <div v-for="movie in movies" class="single-list">
+                    <div v-if="flag" class="wrapper-single-list">
                         <ul>
-                            <li>IMG</li>
+                            <li>
+                                <img :src="imgPath + movie.poster_path" alt="">
+                            </li>
                         </ul>
     
                         <span>
-                            <h2>{{titolo}}</h2>
-                            <h4>original title</h4>
-                            <h4>lingua</h4>
-                            <h4>voto</h4>
+                            <h2>{{movie.title}}</h2>
+                            <h4>{{movie.original_title}}</h4>
+                            <h4>{{movie.original_language}}</h4>
+                            <h4>{{movie.vote_average}}</h4>
                         </span>
                     </div>
                 </div>
@@ -44,6 +51,7 @@
 
             </div>
         </div>
+
     </div>
 
     <!--cdn vue e directory js-->
