@@ -56,10 +56,11 @@ var app = new Vue({
 
             })
 
-            
-            
-
         },
+
+        stars(stelle) {
+            return Math.ceil(stelle/2);
+        }
         
     },
 

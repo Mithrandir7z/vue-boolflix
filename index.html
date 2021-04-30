@@ -45,8 +45,11 @@
                             <h4 v-if="movie.flag == 1">
                                 <img class="flag-image" src="img/enFlag.webp" alt="flag">
                             </h4>
-                            <h4>{{movie.original_language}}</h4>
-                            <h4>{{movie.vote_average}}</h4>
+                
+                            <h4>
+                                <!--gestisco le stelle, stamperò il numero di stelle ricavate dalla funzione Math.ceil-->
+                                <i class="fas fa-star yellow" v-for="star in stars(movie.vote_average)"></i>
+                            </h4>
                         </span>
                     </div>
                 </div>

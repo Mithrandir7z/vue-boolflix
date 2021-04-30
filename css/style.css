@@ -45,6 +45,10 @@ img {
     background-color: black;
 }
 
+.single-list span i {
+    color: yellow;
+}
+
 .wrapper-single-list {
     display: flex;
     flex-direction: column;
