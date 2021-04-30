@@ -34,17 +34,12 @@ var app = new Vue({
 
                     console.log(element.original_language);
 
-                    //Se la lingua da ricercare è nelle api allora la variabile flag = 1;
-                    //Nell'html se la variabile flag è uguale a 1 (v-if flag == 1) stamperà la bandiera
+                    //Se la lingua da ricercare è nelle api allora la aggiungo la proprietà flag: 1;
+                    //Nell'html se la movie.flag è uguale a 1 (v-if movie.flag == 1) stamperà la bandiera
                     if ( this.language === element.original_language ) {
 
-                        // console.log(element.original_title);
-                        //obj.key3 = "value3";
-                        
                         element.flag = 1;
-                        // console.log(movies);
                         console.log(element);
-
 
                     } else if (this.language != element.original_language) {
                         element.flag = 0;
@@ -60,8 +55,6 @@ var app = new Vue({
 
             //     this.movies.push(response.data.results);
             //     console.log(this.movies);
-
-                
 
             // })
 
