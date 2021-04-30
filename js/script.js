@@ -46,7 +46,7 @@ var app = new Vue({
                 
             })
             
-            //provo ad inserire nella ricerca anche le api delle serie tv
+            //Inserisco nella ricerca anche le api delle serie tv
             axios
             .get('https://api.themoviedb.org/3/search/tv?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f&query=' + titoloricercato)
             .then(response => {
@@ -56,6 +56,9 @@ var app = new Vue({
 
             })
 
+            
+            
+
         },
         
     },
@@ -64,4 +67,4 @@ var app = new Vue({
         
     }
 
-  })
+})
