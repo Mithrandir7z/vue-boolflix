@@ -14,7 +14,7 @@ var app = new Vue({
         movies: [],
         titolo: '',
         imgPath: 'https://image.tmdb.org/t/p/w200',
-        language: 'cs',
+        language: 'en',
     },
 
     methods: {
@@ -49,14 +49,14 @@ var app = new Vue({
                 
             })
             
-            // axios
-            // .get('https://api.themoviedb.org/3/search/tv?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f&query=' + titoloricercato)
-            // .then(response => {
+            axios
+            .get('https://api.themoviedb.org/3/search/tv?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f&query=' + titoloricercato)
+            .then(response => {
 
-            //     this.movies.push(response.data.results);
-            //     console.log(this.movies);
+                this.movies.push(response.data.results);
+                console.log(this.movies);
 
-            // })
+            })
 
         },
         
