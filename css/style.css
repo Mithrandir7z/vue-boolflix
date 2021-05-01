@@ -37,6 +37,7 @@ img {
 .single-list {
     width: 250px;
     display: flex;
+    /* flex-direction: column; */
     align-items: center;
     justify-content: center;
     margin: 15px;
@@ -60,11 +61,31 @@ img {
     list-style-type: none;
 }
 
-.single-list span {
-    padding-top: 20px;
-    width: 100%;
-    text-align: center;
+.immagine {
+    position: relative;
 }
+
+.overlay {
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    display: none;
+}
+
+.immagine:hover img {
+    opacity: 0.5;
+}
+
+.immagine:hover .overlay {
+    display: block;
+}
+
 
 .flag-image {
     width: 35px;
