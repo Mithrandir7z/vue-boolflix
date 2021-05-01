@@ -58,6 +58,8 @@ var app = new Vue({
 
         },
 
+        //Milestone 2 Gestisco le stelle
+        //Sull'icona della stella eseguo un v-for che ciclerà in base al ritultato ritornato dalla funzione stars()
         stars(stelle) {
             return Math.ceil(stelle/2);
         }
