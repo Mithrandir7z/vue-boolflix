@@ -8,11 +8,30 @@ img {
     width: 100%;
 }
 
+header {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    padding: 0px 100px;
+}
+
+.logo img {
+    width: 130px;
+    height: auto;
+}
+
+header label {
+    padding-top: 40px;
+}
+
 #root {
     width: 100%;
     height: 100vh;
-    background-color: #141414;
-    padding: 50px;
+    background-color: #201e1e;
+    padding-top: 0;
+    padding-bottom: 50px;
     text-align: center;
     overflow: auto;
     color: white;
@@ -31,7 +50,7 @@ img {
     flex-wrap: wrap;
     width: 100%;
     height: 100%;
-    background-color: rgb(65, 65, 65);
+    background-color: rgb(32 30 30);
 }
 
 .single-list {
@@ -41,7 +60,7 @@ img {
     align-items: center;
     justify-content: center;
     margin: 15px;
-
+    border-radius: 15px;
     /*test*/
     background-color: black;
 }
