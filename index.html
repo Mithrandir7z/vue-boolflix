@@ -25,17 +25,21 @@
 
             <!--INPUT E BUTTON-->
             <label for="">
-                <input v-model="titolo" type="text">
+                <input v-model="titolo" class="input-ricerca" type="text" placeholder="Cerca Film o Serie Tv">
                 <button @click="cerca(titolo)">cerca</button>
             </label>
         </header>
 
 
         <div class="wrapper">
+            
             <div class="lista">
 
                 <div v-if="visible">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis veniam fuga quisquam veritatis praesentium in impedit eaque minima sunt illo. Veniam quibusdam dolores mollitia voluptatem fugit aut. Sed, corporis nisi.
+                    <h2>Film Popolari</h2>
+                    <div class="container">
+                        <a v-for="film in popularFilm.slice(0, 5)" href="#animals" class="item"><img :src="imgPathTwo + film.poster_path"></a>
+                    </div>
                 </div>
 
                 <!--Inizio Single List-->

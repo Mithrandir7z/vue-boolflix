@@ -9,8 +9,10 @@ var app = new Vue({
 
     data: {
         movies: [],
+        popularFilm: [],
         titolo: '',
         imgPath: 'https://image.tmdb.org/t/p/w200',
+        imgPathTwo: 'https://image.tmdb.org/t/p/w400',
         language: 'en',
         visible: true
     },
@@ -25,7 +27,8 @@ var app = new Vue({
             axios
             .get('https://api.themoviedb.org/3/search/movie?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f&query=' + titoloricercato)
             .then(response => {
-      
+                
+                //Inserisco nell'array movies l'array di oggetti dei film
                 this.movies = response.data.results; 
                 
 
@@ -49,7 +52,7 @@ var app = new Vue({
                 
             })
             
-            //Inserisco nella ricerca anche le api delle serie tv
+            //Push nell'array movies anche le api delle serie tv
             axios
             .get('https://api.themoviedb.org/3/search/tv?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f&query=' + titoloricercato)
             .then(response => {
@@ -70,7 +73,14 @@ var app = new Vue({
     },
 
     mounted() {
-        
+        axios
+            .get('https://api.themoviedb.org/3/movie/popular?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f')
+            .then(response => {
+
+                this.popularFilm = response.data.results;
+                console.log("popular movies", this.popularFilm);
+
+            })
     }
 
 })
