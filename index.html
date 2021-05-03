@@ -27,7 +27,9 @@
             <label for="">
                 <input v-model="titolo" class="input-ricerca" type="text" placeholder="Cerca Film o Serie Tv">
                 <button @click="cerca(titolo)">cerca</button>
-            </label>
+                <i class="fas fa-bell"></i>
+                <i class="fas fa-sliders-h"></i>
+            </label>       
         </header>
 
 
@@ -36,7 +38,7 @@
             <div class="lista">
 
                 <div v-if="visible">
-                    <h2>Film Popolari</h2>
+                    <h2>Popolari in questo momento</h2>
                     <div class="container">
                         <a v-for="film in popularFilm.slice(0, 5)" href="#animals" class="item"><img :src="imgPathTwo + film.poster_path"></a>
                     </div>
