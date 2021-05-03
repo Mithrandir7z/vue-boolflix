@@ -32,12 +32,14 @@
             </label>       
         </header>
 
-
+        <div v-if="ricercaVisible">
+            <p>Risultati correlati a: {{titolo}}</p>
+        </div>
         <div class="wrapper">
             
             <div class="lista">
 
-                <div v-if="visible">
+                <div v-if="HomeVisible">
                     <h2>Popolari in questo momento</h2>
                     <div class="container">
                         <a v-for="film in popularFilm.slice(0, 5)" href="#animals" class="item"><img :src="imgPathTwo + film.poster_path"></a>

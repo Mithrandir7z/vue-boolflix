@@ -14,7 +14,8 @@ var app = new Vue({
         imgPath: 'https://image.tmdb.org/t/p/w200',
         imgPathTwo: 'https://image.tmdb.org/t/p/w400',
         language: 'en',
-        visible: true
+        HomeVisible: true,
+        ricercaVisible: false
     },
 
     methods: {
@@ -22,7 +23,8 @@ var app = new Vue({
         //Faccio partire la ricerca nelle api film e popolo l'array movies.
         cerca(titoloricercato) {
 
-            this.visible = false;
+            this.HomeVisible = false;
+            this.ricercaVisible = true;
 
             axios
             .get('https://api.themoviedb.org/3/search/movie?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f&query=' + titoloricercato)
