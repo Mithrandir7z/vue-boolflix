@@ -24,6 +24,8 @@
             </a>
 
             <!--INPUT E BUTTON-->
+            <!--Prende in input il valore, al click del button Vue caricherà la query col relativo titolo ricercato 
+                che stamperà in single-list-->
             <label for="">
                 <input v-model="titolo" class="input-ricerca" type="text" placeholder="Cerca Film o Serie Tv">
                 <button @click="cerca(titolo)">cerca</button>
@@ -32,13 +34,20 @@
             </label>       
         </header>
 
+        <!--Questo elemento sarà stampato solo se la variabile ricercaVisible è true-->
         <div v-if="ricercaVisible">
             <p>Risultati correlati a: {{titolo}}</p>
         </div>
+
+
+
+
         <div class="wrapper">
             
             <div class="lista">
 
+                <!--Questo blocco di codice è stampato solo sulla homepage, questo è permesso grazie alla verifica della variabile HomeVisible
+                     che sarà true in homepage e false al click del button della ricerca-->
                 <div v-if="HomeVisible">
                     <h2>Popolari in questo momento</h2>
                     <div class="container">
@@ -47,15 +56,20 @@
                 </div>
 
                 <!--Inizio Single List-->
+                <!--cercato l'array di oggetti al click del button, vue popolerà l'array movies che sarà stampato vol v-for movie in movies-->
                 <div v-for="movie in movies" class="single-list">
                     <div class="wrapper-single-list">
                         <ul>
                             <li>
                                 <div class="immagine">
+                                    <!--la src corrisponderà alla proprietà poster_path di ogni oggetto-->
                                     <img :src="imgPath + movie.poster_path" alt="Immagine risultato">
+
                                     <span class="overlay">
                                         <h2>{{movie.title}}</h2>
                                         <h4>{{movie.original_title}}</h4>
+
+                                        <!--La bandierà sarà stampata solo se è verificata la lingua inglese di ogni singolo film-->
                                         <h4 v-if="movie.flag == 1">
                                             <img class="flag-image" src="img/enFlag.webp" alt="flag">
                                         </h4>
@@ -65,6 +79,7 @@
                                             <i class="fas fa-star yellow" v-for="star in stars(movie.vote_average)"></i>
                                         </h4>
                                     </span>
+
                                 </div>
                             </li>
                         </ul>

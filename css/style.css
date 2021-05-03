@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 
+/*COMMON*/
 img {
     width: 100%;
 }
+
 
 
 /*INIZIO HEADER*/
@@ -46,6 +48,9 @@ header label i {
 }
 /*FINE HEADER*/
 
+
+
+/*INIZIO WRAPPER DEL CONTENUTO ROOT*/
 #root {
     width: 100%;
     height: 100vh;
@@ -138,11 +143,11 @@ p {
     padding-left: 130px;
     padding-top: 40px;
 }
+/*INIZIO WRAPPER DEL CONTENUTO ROOT*/
 
 
 
-
-/*Film Popolari CSS*/
+/*INIZIO Film Popolari CSS*/
 .container {
     display: flex;
     margin-top: 50px;
@@ -179,3 +184,4 @@ overflow: hidden;
 display: block;
 max-width: 100%;
 }
+/*FINE Film Popolari CSS*/

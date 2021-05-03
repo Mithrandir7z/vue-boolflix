@@ -20,17 +20,18 @@ var app = new Vue({
 
     methods: {
 
-        //Faccio partire la ricerca nelle api film e popolo l'array movies.
+        //Faccio partire la ricerca nelle api film e popolo l'array movies (che sarà stampato in single-list).
         cerca(titoloricercato) {
 
             this.HomeVisible = false;
             this.ricercaVisible = true;
 
+            //Inizializzo ricerca film con axios
             axios
             .get('https://api.themoviedb.org/3/search/movie?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f&query=' + titoloricercato)
             .then(response => {
                 
-                //Inserisco nell'array movies l'array di oggetti dei film
+                //Inserisco nell'array movies l'array di oggetti dei film preso dall'api
                 this.movies = response.data.results; 
                 
 
@@ -54,6 +55,9 @@ var app = new Vue({
                 
             })
             
+
+
+            //Inizializzo ricerca serie tv con axios
             //Push nell'array movies anche le api delle serie tv
             axios
             .get('https://api.themoviedb.org/3/search/tv?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f&query=' + titoloricercato)
@@ -74,7 +78,10 @@ var app = new Vue({
         
     },
 
+    
     mounted() {
+
+        //Inizializzo la ricerca api film popolari per stampare in home page
         axios
             .get('https://api.themoviedb.org/3/movie/popular?api_key=eeeef43555f0e5d1e4fb97ad6ba88a7f')
             .then(response => {
